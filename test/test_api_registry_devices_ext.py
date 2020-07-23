@@ -75,8 +75,8 @@ class TestRegistryDevices(testUtils.AbstractTest):
 
         connLogs = device.getConnectionLogs()
 
-        # There may be more than 2 entries due to previous connection attempts if we re-used a device ID.  But there should be at least two!
-        assert len(connLogs) >= 2
+        # There may be more than 1 entry due to previous connection attempts if we re-used a device ID.  But there should be at least one!
+        assert len(connLogs) >= 1
         for entry in connLogs:
             assert isinstance(entry, LogEntry)
             assert isinstance(entry.timestamp, datetime)
